@@ -176,16 +176,59 @@ nav a:hover::after {
 }
 
 .welcome-card {
-  text-align: center;
   background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-gray) 100%);
+  text-align: left;
 }
 
-.welcome-card .highlight {
+.welcome-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome-card p {
+  text-align: left;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-card strong {
+  display: block;
+  text-align: center;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.2em;
   color: var(--sage-dark);
   margin-top: 2rem;
   font-style: italic;
+}
+
+.welcome-card ul {
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.welcome-card ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1.05rem;
+  color: var(--warm-gray);
+}
+
+.welcome-card ul li::before {
+  content: '•';
+  color: var(--sage-primary);
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.highlight-text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--sage-dark);
+  margin-top: 2rem;
 }
 
 h1 {
@@ -534,6 +577,14 @@ footer p {
 
   .cta-section {
     padding: 1.5rem 0;
+  }
+
+  .welcome-card p {
+    text-align: center;
+  }
+
+  .welcome-card ul {
+    text-align: center;
   }
 }
 
