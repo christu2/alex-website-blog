@@ -5,381 +5,26 @@
   <title>Unlock Your Fascia, Freedom, & Frequency Flowstate | Alexandra Christus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --sage-primary: #8BA888;
-      --sage-light: #A8C5A5;
-      --sage-dark: #6B8268;
-      --cream: #FEFDF8;
-      --warm-white: #FBFAF7;
-      --soft-gray: #F5F4F1;
-      --charcoal: #2C2C2C;
-      --warm-gray: #6B6B6B;
-      --accent-rose: #D4A574;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    .serif {
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* Header Styles */
-    header {
-      background: linear-gradient(135deg, var(--sage-primary) 0%, var(--sage-dark) 100%);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    header h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 500;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      position: relative;
-      z-index: 2;
-    }
-
-    header p {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 300;
-      opacity: 0.95;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Navigation */
-    nav {
-      background: var(--warm-white);
-      padding: 0;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 20px;
-      min-height: 70px;
-    }
-
-    nav a {
-      color: var(--charcoal);
-      text-decoration: none;
-      margin: 0 2rem;
-      font-weight: 400;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      padding: 1rem 0;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0.5rem;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--sage-primary);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    nav a:hover {
-      color: var(--sage-primary);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    /* Card Styles */
-    .card {
-      background: var(--warm-white);
-      border-radius: 16px;
-      padding: 40px;
-      margin: 40px 0;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
-      border: 1px solid rgba(139, 168, 136, 0.1);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--sage-primary), var(--sage-light));
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 50px rgba(0,0,0,0.08);
-    }
-
-    .welcome-card {
-      text-align: center;
-      background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-gray) 100%);
-    }
-
-    .welcome-card .highlight {
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: var(--sage-dark);
-      margin-top: 2rem;
-      font-style: italic;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: var(--sage-dark);
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      color: var(--sage-primary);
-      margin: 2rem 0 1rem 0;
-      font-weight: 500;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--warm-gray);
-      margin-bottom: 1.2rem;
-    }
-
-    /* Lists */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      position: relative;
-      font-size: 1.05rem;
-    }
-
-    ul li::before {
-      content: '•';
-      color: var(--sage-primary);
-      font-size: 1.2rem;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    ul li a {
-      color: var(--sage-primary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    ul li a:hover {
-      color: var(--sage-dark);
-      text-decoration: underline;
-    }
-
-    /* Buttons */
-    .button, .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--sage-primary) 0%, var(--sage-dark) 100%);
-      color: white;
-      padding: 16px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(139, 168, 136, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .button::before, .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .button:hover::before, .cta-button:hover::before {
-      left: 100%;
-    }
-
-    .button:hover, .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(139, 168, 136, 0.4);
-    }
-
-    .cta-section {
-      text-align: center;
-      padding: 3rem 0;
-      background: var(--soft-gray);
-      border-radius: 16px;
-      margin: 3rem 0;
-    }
-
-    .cta-section h2 {
-      margin-bottom: 1rem;
-    }
-
-    .cta-section p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    /* FAQ Styles */
-    .faq-item {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(139, 168, 136, 0.2);
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-question {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--sage-dark);
-      margin-bottom: 1rem;
-    }
-
-    .faq-answer {
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, var(--sage-dark) 0%, var(--charcoal) 100%);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-      margin-top: 80px;
-    }
-
-    footer p {
-      color: rgba(255,255,255,0.8);
-      margin: 0;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        padding: 1rem 20px;
-      }
-      
-      nav a {
-        margin: 0.5rem 1rem;
-      }
-      
-      .card {
-        padding: 30px 25px;
-        margin: 30px 0;
-      }
-      
-      h2 {
-        font-size: 1.6rem;
-      }
-      
-      .container {
-        padding: 40px 15px;
-      }
-    }
-
-    /* Social Links Styling */
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1 class="serif">Unlock Your Fascia, Freedom, & Frequency Flowstate</h1>
-    <p>Become an Empowered & Embodied Self-Healer</p>
+    <p style="font-weight: 300; color: rgba(255,255,255,0.85);">Become an Empowered & Embodied Self-Healer</p>
   </header>
 
   <nav>
     <div class="nav-container">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#offerings">Offerings</a>
-      <a href="#faq">Block Therapy™</a>
-      <a href="#contact">Contact</a>
-      <a href="https://yoursubstack.substack.com" target="_blank">Blog</a>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#offerings">Offerings</a>
+        <a href="#faq">Block Therapy™</a>
+        <a href="#contact">Contact</a>
+        <a href="https://yoursubstack.substack.com" target="_blank">Blog</a>
+      </div>
     </div>
   </nav>
 
@@ -400,22 +45,29 @@
         <li style="margin-bottom: 0.8rem;">Live in embodied presence—with a calm nervous system and clear inner guidance</li>
       </ul>
       
-      <p>There's nothing to fix, nothing to force. The way forward isn't becoming more—it's coming home to what's already within you. To your body, your breath, the essence of who you are.</p>
+      <p>There's nothing to fix, nothing to force. The way forward isn't becoming more—it's coming home to what's already within you. <strong style="font-weight: 600; font-size: 1.1em; color: var(--sage-dark);">To your body, your breath, the essence of who you are.</strong></p>
     </div>
 
     <div class="card" id="about">
-      <div class="highlight serif" style="text-align: center; margin-bottom: 2rem;">Come home to your body, your breath, your being.</div>
       
-      <h2 class="serif">About Me</h2>
-      <p>Hi, I'm Alex—a space holder and fellow traveler on the path of self-discovery and healing.</p>
-      
-      <p>For years, I lived a life that looked "successful" from the outside—as a marketing manager at a Fortune 500 company, hitting targets and climbing the ladder. But deep down, something was missing. I longed for more—more connection, more truth, more freedom.</p>
-      
-      <p>So I listened.</p>
-      
-      <p>I followed my intuition to Ikaria, Greece—an island known for its slow rhythms and longevity. There, I immersed myself in deep inner work, reconnecting with my body, breath, and Self. Now based in the lush nature of Costa Rica, I've aligned my life with what feels true in my heart—and I walk beside others as they do the same.</p>
-      
-      <p>I know what it's like to feel disconnected in a world that rewards hustle. And I know the quiet joy—and deep power—of coming back home to your body and your truth.</p>
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="serif">About Me</h2>
+          <p>Hi, I'm Alex—a space holder and fellow traveler on the path of self-discovery and healing.</p>
+          
+          <p>For years, I lived a life that looked "successful" from the outside—as a marketing manager at a Fortune 500 company, hitting targets and climbing the ladder. But deep down, something was missing. I longed for more—more connection, more truth, more freedom.</p>
+          
+          <p>So I listened.</p>
+          
+          <p>I followed my intuition to Ikaria, Greece—an island known for its slow rhythms and longevity. There, I immersed myself in deep inner work, reconnecting with my body, breath, and Self. Now based in the lush nature of Costa Rica, I've aligned my life with what feels true in my heart—and I walk beside others as they do the same.</p>
+          
+          <p>I know what it's like to feel disconnected in a world that rewards hustle. And I know the quiet joy—and deep power—of coming back home to your body and your truth.</p>
+        </div>
+        
+        <div class="about-image">
+          <img src="images/AlexPhoto.jpg" alt="Alexandra Christus" class="profile-photo">
+        </div>
+      </div>
       
       <h3>The path that brought me here:</h3>
       <ul>
@@ -423,34 +75,31 @@
         <li>Certified Yoga Instructor (RYT-500)</li>
         <li>Certified Meditation Teacher (Mindfulness & Compassion)</li>
         <li>Block Therapy™ Instructor-in-Training</li>
-        <li>Profoundly shifted by frequency work through <em>The Simplicity Platform</em>—a path that changed my life from the inside out</li>
+        <li>Profoundly shifted by frequency work through <em><a href="https://thesimplicityplatform.com" target="_blank" style="color: var(--sage-primary); text-decoration: none;">The Simplicity Platform</a></em>—a path that changed my life from the inside out</li>
       </ul>
 
-      <div class="cta-section">
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-          <button class="cta-button" onclick="window.location.href='#contact'">Explore 1:1 Sessions</button>
-          <button class="cta-button" onclick="window.open('https://yoursubstack.substack.com', '_blank')" style="background: linear-gradient(135deg, var(--accent-rose) 0%, #B8956A 100%);">Read the Latest Blog</button>
-          <button class="cta-button" onclick="window.location.href='#faq'" style="background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-primary) 100%);">Learn About Block Therapy™</button>
-        </div>
-      </div>
     </div>
 
     <div class="card" id="offerings">
       <h2 class="serif">Current Offerings</h2>
       
-      <h3>Block Therapy™ Programs</h3>
-      <ul>
-        <li><a href="https://kd167.isrefer.com/go/starterprogram/alexchristus/" target="_blank">Order your Block and the Block Therapy Starter Program</a></li>
-        <p>The introduction program to Block Therapy™ — includes videos, a 9-Day Full Body Fascia Program, and more.</p>
-
-        <li><a href="https://kd167.isrefer.com/go/5stepscontrolpain/alexchristus/" target="_blank">Access 5 Steps to Control Your Pain — Complimentary</a></li>
-        <p>Learn the foundations to begin your health and healing journey with Block Therapy™.</p>
-      </ul>
-
       <div class="cta-section">
-        <h3>Personalized Sessions</h3>
-        <p>Ready for one-on-one guidance with yoga, meditation, or wellness coaching?</p>
-        <button class="cta-button" onclick="window.location.href='#contact'">Schedule Your Session</button>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+          <button class="cta-button" onclick="window.location.href='#contact'">Book 1:1 Session</button>
+          <button class="cta-button" onclick="window.open('https://kd167.isrefer.com/go/starterprogram/alexchristus/', '_blank')" style="background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-primary) 100%);">Order your Block & Block Therapy Starter Program</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="serif">Tools for the Journey</h2>
+      
+      <div class="cta-section">
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+          <button class="cta-button" onclick="window.open('https://kd167.isrefer.com/go/5stepscontrolpain/alexchristus/', '_blank')" style="background: linear-gradient(135deg, var(--accent-rose) 0%, #B8956A 100%);">5 Steps to Control Your Pain</button>
+          <button class="cta-button" onclick="window.open('https://yoursubstack.substack.com', '_blank')" style="background: linear-gradient(135deg, var(--accent-rose) 0%, #B8956A 100%);">Read the Latest Blog</button>
+          <button class="cta-button" onclick="window.location.href='#faq'" style="background: linear-gradient(135deg, var(--accent-rose) 0%, #B8956A 100%);">Learn About Block Therapy™</button>
+        </div>
       </div>
     </div>
 
@@ -510,6 +159,11 @@
   </footer>
 
   <script>
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
     function openContactForm() {
       // This would ideally connect to a contact form service
       // For now, we'll create a simple modal or redirect
@@ -527,7 +181,18 @@
             block: 'start'
           });
         }
+        // Close mobile menu after clicking a link
+        document.getElementById('navLinks').classList.remove('active');
       });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const nav = document.querySelector('nav');
+      const navLinks = document.getElementById('navLinks');
+      if (!nav.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
     });
   </script>
 
