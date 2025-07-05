@@ -107,8 +107,18 @@
       
       <div class="cta-section">
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
-          <button class="cta-button" onclick="window.location.href='mailto:alexandrachristus@gmail.com?subject=Contact%20Alex%20for%20a%201:1%20session&body=Hi%20Alex,%0A%0AI%20would%20like%20to%20book%20a%201:1%20session.%20Please%20let%20me%20know%20your%20availability.%0A%0AThank%20you!'">Book 1:1 Session</button>
+          <button class="cta-button" onclick="showSessionDetails('intro')">Book 1:1 30-Minute Introduction Call</button>
+          <button class="cta-button" onclick="showSessionDetails('wellness')">Book 1:1 60-Minute Personalized Wellness Plan</button>
+          <button class="cta-button" onclick="showSessionDetails('yoga')">Book 1:1 Personalized 60-minute Yoga or Meditation Session</button>
           <button class="cta-button" onclick="window.open('https://kd167.isrefer.com/go/starterprogram/alexchristus/', '_blank')" style="background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage-primary) 100%);">Order your Block & Block Therapy Starter Program</button>
+        </div>
+      </div>
+      
+      <!-- Session Details Modal -->
+      <div id="sessionModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div id="sessionDetails"></div>
         </div>
       </div>
     </div>
@@ -213,6 +223,76 @@
       const navLinks = document.getElementById('navLinks');
       if (!nav.contains(e.target)) {
         navLinks.classList.remove('active');
+      }
+    });
+
+    // Session modal functionality
+    const sessionDetails = {
+      intro: {
+        title: "Book 1:1 30-minute introduction call",
+        description: "This introductory session is designed for individuals seeking to explore their wellness journey. During this 30-minute consultation, you will have the opportunity to discuss your personal goals, challenges, and aspirations with me. We can discuss insights into a holistic approach to wellness, helping you understand how we can create a plan to meet your unique needs. This session is perfect for those new to wellness practices or anyone looking to gain clarity on their path to well-being.",
+        cost: "$33"
+      },
+      wellness: {
+        title: "Book 1:1 60-Minute Personalized Wellness Plan",
+        description: "In this comprehensive 60-minute session, I will work closely with you to create a personalized wellness plan that aligns with your lifestyle and health goals. We will discuss and assess your current habits and preferences to design a plan that is both achievable and effective. This tailored approach ensures that you receive the support and guidance necessary to foster lasting change and enhance your overall well-being.",
+        cost: "$75",
+        note: "Prior to booking this plan, please book a 1:1 30-minute introduction call"
+      },
+      yoga: {
+        title: "Book 1:1 Personalized 60-Minute Yoga or Meditation Session",
+        description: "Experience a transformative 60-minute yoga or meditation session tailored specifically to your needs. Whether you are looking to deepen your yoga practice, relieve stress, or cultivate mindfulness, I will guide you through a personalized session that incorporates techniques suited to your level and goals. This one-on-one experience allows for focused attention, ensuring that you receive the most benefit from your practice, whether it's through physical movement, breathwork, or meditation techniques.",
+        cost: "$75"
+      }
+    };
+
+    function showSessionDetails(sessionType) {
+      const modal = document.getElementById('sessionModal');
+      const detailsDiv = document.getElementById('sessionDetails');
+      const session = sessionDetails[sessionType];
+      
+      let html = `
+        <div class="session-detail">
+          <h3>${session.title}</h3>
+          <p>${session.description}</p>
+          <div class="session-cost">Cost: ${session.cost}</div>
+          ${session.note ? `<div class="session-note"><p>Note: ${session.note}</p></div>` : ''}
+          <button class="book-button" onclick="bookSession('${sessionType}')">Book This Session</button>
+        </div>
+      `;
+      
+      detailsDiv.innerHTML = html;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('sessionModal');
+      modal.style.display = 'none';
+    }
+
+    function bookSession(sessionType) {
+      const session = sessionDetails[sessionType];
+      const subject = `Book ${session.title}`;
+      const body = `Hi Alex,
+
+I would like to book a ${session.title.toLowerCase()}.
+
+Name: 
+Email: 
+Preferred availability: 
+Preliminary comments/questions: 
+
+Thank you!`;
+      
+      window.location.href = `mailto:alexandrachristus@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('sessionModal');
+      const modalContent = document.querySelector('.modal-content');
+      if (e.target === modal) {
+        closeModal();
       }
     });
   </script>
